@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #2196f3;
+    padding: 10px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+}
+
+body >* {
+    padding: 1rem;
+}
+
+header, div, main, aside, footer {
+    font-size: 2rem;
+    background-color: #d3eafd;
+    text-align: center;
+}
+
+header {
+    grid-column: 1 / -1;
+}
+
+div {
+    grid-row: span 2;
+}
+
+footer {
+    grid-column: span 2;
+}
+
+@media screen and (width <= 768px) {
+    div, main, aside, footer {
+        grid-column: 1 / -1;
+    }
+
+    div {
+        grid-row: unset;
+    }
+}

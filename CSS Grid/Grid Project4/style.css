@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 1fr 2fr 0.6fr;
+    background-color: #d4d8de;
+}
+
+.left_top_left {
+    padding: 2rem;
+}
+
+.icon {
+    width: 15px;
+    height: 15px;
+    background-color: #121212;
+    rotate: 45deg;
+}
+
+.left_top_right {
+    padding: 2rem;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: #121212;
+    text-align: right;
+}
+
+a.menu {
+    margin-bottom: 1rem;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 5.21vw;
+    font-weight: 400;
+    line-height: 1;
+}
+
+h1:nth-child(2n) {
+    text-align: center;
+}
+
+.right {
+    grid-column: span 2;
+    grid-row: span 3;
+}
+
+.left_center, .left_bottom {
+    grid-column: span 2;
+    padding: 2rem;
+}
+
+.right {
+    padding: 2rem 1rem;
+}
+
+video {
+    width: 90%;
+    height: 660px;
+    object-fit: cover;
+    object-position: 50% 40%;
+}
+
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    background-color: #d2422f;
+    color: #fff;
+    padding: 1.5rem;
+    border-radius: 50%;
+}
+
+i {
+    display: block;
+    font-size: 1.5rem;
+}
+
+a.menu_icon {
+    display: none;
+}
+
+@media screen and (width <= 1024px) {
+    main {
+        grid-auto-rows: 64px 1fr 1fr 80px;
+    }
+
+    .left_top_left, .left_top_right {
+        grid-column: span 2;
+        padding: 0.65rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .left_top_left {
+        justify-self: start;
+    }
+
+    .left_top_right {
+        justify-self: end;
+    }
+
+    .right {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+
+    .left_center, .left_bottom {
+        grid-column: 1 / -1;
+        padding: 0.65rem;
+    }
+
+    a.menu, a.link {
+        display: none;
+    }
+
+    a.menu_icon {
+        display: initial;
+    }
+
+    .right {
+        padding: 0.65rem;
+    }
+
+    video {
+        width: 100%;
+        height: 350px;
+        object-position: 50% 25%;
+    }
+
+    h1 {
+        font-size: 10vw;
+    }
+}
+
+@media screen and (width <= 360px) {
+    main {
+        grid-auto-rows: 50px 1fr 250px 70px;
+    }
+
+    video {
+        height: 335px;
+        object-position: 50% 35%;
+    }
+
+    br {
+        display: none;
+    }
+
+    h1 {
+        font-size: 16.5vw;
+    }
+
+    h1:nth-child(2n) {
+        text-align: right;
+    }
+
+    .left_top_left,
+    .left_top_right,
+    .right,
+    .left_center,
+    .left_bottom {
+        padding: 0.5rem;
+    }
+}
